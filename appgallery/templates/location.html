@@ -1,0 +1,28 @@
+{%extends 'base.html'%}
+{% block content %}
+<div class="container">
+    <!-- <div class="row">
+        {% for image in images %}
+       <div class="col-md-4">
+         
+         <img src="{{image.image.url}}" class="img-responsive" alt="Image"height="300px"width="100%">
+       </div>
+      
+       {% endfor %}
+       <div class="col-md-4"></div>
+       <div class="col-md-4"></div>
+       </div>
+       
+       {% endblock %} -->
+       <ul class='cate text-md-center'>
+        <span>Categories:</span>
+        {% if categories %}
+        {% for cate in categories %}
+        <li><a href="">{{ cate.category }}</a></li>
+        {% endfor %}
+        {% else %}
+          <p>No Categories at the Moments</p>
+        {% endif %}
+      </ul>
+
+    </div>
