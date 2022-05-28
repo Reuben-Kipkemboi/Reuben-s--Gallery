@@ -8,9 +8,9 @@ def home(request):
     locations=Location.objects.all
     all_images=Image.get_images()
     
-    if request.GET.get('location'):
-        all_images = Image.filter_by_location(request.GET.get('location'))
-        return render(request, 'location.html', {'images':all_images, 'categories':categories, 'location': request.GET.get('location')})
+    # if request.GET.get('location'):
+    #     all_images = Image.filter_by_location(request.GET.get('location'))
+    #     return render(request, 'location.html', {'images':all_images, 'categories':categories, 'location': request.GET.get('location')})
     return render(request, 'index.html', {"templateimages":all_images, 'categorytemplates':categories,'localtemplates':locations })
 
 
@@ -30,6 +30,8 @@ def search(request):
         message = "seems you have not provided a search input"
         return render(request, 'search.html',{"message":message})
     
-def location(request):
-    locations=Location.objects.all()
-    return render(request, 'location.html', {'locations':locations})
+        
+def image_location(request,location):
+    location_images = Image.filter_by_location(location)
+    # locations=Location.objects.all()
+    return render(request, 'location.html', {'locations':location_images})
