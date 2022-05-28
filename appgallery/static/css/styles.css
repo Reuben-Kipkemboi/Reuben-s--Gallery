@@ -35,3 +35,39 @@
     background: #412728;
     border-radius: 4px;
 }
+#home-search{
+    background-color: #000;
+    height: 100vh;
+}
+#modal-fade{
+    margin: 0 auto;
+    
+    color: #000;
+}
+.search-title{
+    color: #F9F871;
+}
+#title{
+    color: #fff;
+    font-size: 4vh;
+    border-bottom: 1px solid #F9F871;
+    text-align: center;
+    margin-bottom: 2%;
+}
+#modal-body{
+    background-color: #000;
+}
+#exampleModalLabel{
+    color: #d18a27;
+    font-size: 4vh;
+    font-weight: bolder;
+}
+#date, #cat, #loc{
+    color: #d18a27;
+    font-size: 3vh;
+    font-weight: bold;
+}
+.desc{
+    border-bottom: 1px solid #fff;
+    color: #fff;
+}
