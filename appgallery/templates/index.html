@@ -1,14 +1,25 @@
-
 {% extends 'base.html' %}
 {% block content%}
-<h1>welcome to gallery</h1>
-{% for image in templateimages%}
-<h1>{{image.name}} & description == {{image.description}}</h1>
-<p>The Image is shown bellow</p>
-<div class="col-md-4">
-    <img src="{{image.image.url}}"style = "width:400px; height:200px" alt="Image">
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h1>welcome to gallery</h1>
+            {% for image in templateimages%}
+            <h1>{{image.name}} & description == {{image.description}}</h1>
+            <p>The Image is shown bellow</p>
+            <div class="col-md-4">
+                <img src="{{image.image.url}}" style="width:400px; height:200px" alt="Image">
+            </div>
+            {% endfor %}
+        </div>
+        <div class="col-md-4 bg-warning">
+            <ul class="list-group">
+                <li class="list-group-item active text-center" aria-current="true">Locations</li>
+                {% for location in localtemplates%}
+                <a href="/?location={{location.location}}"><li class="list-group-item text-center list-group-item-action">{{location.location}}</li></a>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
 </div>
-{% endfor %}
-
-
 {% endblock content%}
