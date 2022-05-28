@@ -1,15 +1,62 @@
 {%extends 'base.html'%}
 {% block content %}
-<div class="container">
+<div class="container-fluid black">
   <div class="row">
-    {% for image in images %}
-    <div class="col-md-4">
+    <div class="col-md-12">
+      <div class="row row-cols-1 row-cols-md-3" id="row-modal">
+        {% if images %}
+        {% for image in images %}
+        <a href="{{ image.id }}" data-toggle="modal" data-target="#exampleModal{{image.id}}"
+          data-target="#staticBackdrop">
+          <div class="col mb-4">
+            <div class="card">
+              <img src="{{image.image.url}}" class="card-img-top" alt="Image">
+            </div>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
 
-      <img src="{{image.image.url}}" class="img-responsive" alt="Image" height="300px" width="100%">
+      {% for image in images %}
+      <!-- modal -->
+      <div class="modal fade " id="exampleModal{{image.id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+          <div class="modal-content" id="modal-fade">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">{{image.name}}</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-9">
+                  <img src="{{image.image.url}}" class="img-fluid" alt="Image">
+                </div>
+                <div class="col-md-3">
+                  <h4 class="desc">Location</h4>
+                  <p class="text-brown">{{image.location}}</p>
+                  <h4 class="desc">Category</h4>
+                  <p class="">{{image.category}}</p>
+                  <h4 class="desc">Date Created</h4>
+                  <p class="">{{image.date_of_upload}}</p>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <input type="text" id="imagelink" value="{{image.image.url}}"
+                class="btn btn-outline-primary form-control photoUrl" readonly>
+              <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      {% endfor %}
     </div>
-    {% endfor %}
-    <div class="col-md-4"></div>
-    <div class="col-md-4"></div>
   </div>
 </div>
+{% endif %}
+
 {% endblock %}
