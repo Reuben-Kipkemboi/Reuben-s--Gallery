@@ -1,14 +1,11 @@
 
+from email.policy import default
 from django.db import models
 # application models
 
 #location
 class Location(models.Model):
     location =models.CharField(max_length=200)   
-
-
-    def __str__(self):
-        self.location
         
     def save_location(self):
         self.save()
@@ -18,8 +15,6 @@ class Location(models.Model):
 class Category(models.Model):
     category =models.CharField(max_length=200)
     
-    def __str__(self):
-        self.category
         
     def save_category(self):
         self.save()
@@ -27,7 +22,7 @@ class Category(models.Model):
     
 
 class Image(models.Model):
-    image= models.ImageField(upload_to='photos/', null=True)
+    image= models.ImageField(upload_to='photos/', default ="photos/p.png")
     name =models.CharField(max_length=100)
     description =models.TextField()
     date_of_upload = models.DateTimeField(auto_now_add=True)
