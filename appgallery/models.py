@@ -76,10 +76,9 @@ class Image(models.Model):
         return images
     
     @classmethod
-    def filter_by_location(cls, location):
-        location_filter_results = cls.objects.filter(location_id__location__icontains=location)
+    def filter_by_location(cls, location_id):
+        location_filter_results = Image.objects.filter(location__id =location_id)
         return location_filter_results
-    
     
     
     
