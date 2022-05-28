@@ -1,7 +1,39 @@
 {% extends 'base.html' %}
 {% block content%}
-<div class="container">
+<div class="container-fluid" id="home">
     <div class="row">
+        <div class="container">
+            <div class="col-md-12">
+                <p id="paragraph1">
+                    what is a gallery to you? Have a look...
+                </p>
+
+                <form class="" role="search" action="{% url 'search_results' %}">
+                    <input class="form-control mr-sm-4" type="search" placeholder="Search for image with our categories"
+                        aria-label="Search" name="search">
+                    <br>
+                    <div class="text-center">
+                        <button class="btn btn-lg shadow btn-outline-success my-2 my-sm-0 mx-auto" type="submit">Search Image</button>
+                    </div>
+                </form>
+
+                <p id="trend">our Trending categories <button class=" search btn btn-sm btn-light">Travel</button> </p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+
+
+        <div class="col-md-4">
+            <ul class="list-group">
+                <li class="list-group-item active" aria-current="true">Locations</li>
+                {% for location in localtemplates%}
+                <a href="/?location={{location.location}}">
+                    <li class="list-group-item text-center list-group-item-action">{{location.location}}</li>
+                </a>
+                {% endfor %}
+            </ul>
+        </div>
         <div class="col-md-8">
             <h1>welcome to gallery</h1>
             {% for image in templateimages%}
@@ -12,14 +44,7 @@
             </div>
             {% endfor %}
         </div>
-        <div class="col-md-4 bg-warning">
-            <ul class="list-group">
-                <li class="list-group-item active text-center" aria-current="true">Locations</li>
-                {% for location in localtemplates%}
-                <a href="/?location={{location.location}}"><li class="list-group-item text-center list-group-item-action">{{location.location}}</li></a>
-                {% endfor %}
-            </ul>
-        </div>
+
     </div>
 </div>
 {% endblock content%}

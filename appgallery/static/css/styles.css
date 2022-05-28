@@ -3,3 +3,21 @@
 *{
     font-family: 'Delius Swash Caps', cursive;
 }
+#home{
+    background: #000;
+
+}
+#paragraph1{
+    color: #fff;
+    font-size: 7vh;
+    font-weight: bold;
+    text-align: center;
+}
+
+#paragraph1:hover{
+    color:#F9F871;
+}
+#trend{
+    color: #F9F871;
+    font-size: 3vh;
+}
