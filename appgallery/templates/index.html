@@ -13,47 +13,87 @@
                         aria-label="Search" name="search">
                     <br>
                     <div class="text-center">
-                        <button class="btn btn-lg shadow btn-outline-success my-2 my-sm-0 mx-auto" type="submit">Search Image</button>
+                        <button class="btn btn-lg shadow btn-outline-success my-2 my-sm-0 mx-auto" type="submit">Search
+                            Image</button>
                     </div>
                 </form>
-                <p id="trend">our Trending categories 
+                <p id="trend">our Trending categories
                     <mark>Travel</mark>
                     <mark>Food</mark>
                     <mark>Artists</mark>
                     <mark>Cars</mark>
                     <mark>Gadgets</mark>
-                    <mark>Soccer</mark>
-                    <mark>People</mark>
+                    <mark>Wallpapers</mark>
                     <mark>Animals</mark>
                     <mark>Planets</mark>
-                    <mark>Land</mark>
+                    <mark>Technology</mark>
             </div>
         </div>
     </div>
     <div class="row">
-
-
-        <div class="col-md-4">
+        <div class="col-md-3">
             <ul class="list-group">
                 <li class="list-group-item active" aria-current="true">Locations</li>
                 {% for location in localtemplates%}
-                <a href="/?location={{location.location}}">
+                <a href="">
                     <li class="list-group-item text-center list-group-item-action">{{location.location}}</li>
                 </a>
                 {% endfor %}
             </ul>
         </div>
-        <div class="col-md-8">
-            <h1>welcome to gallery</h1>
-            {% for image in templateimages%}
-            <h1>{{image.name}} & description == {{image.description}}</h1>
-            <p>The Image is shown bellow</p>
-            <div class="col-md-4">
-                <img src="{{image.image.url}}" style="width:400px; height:200px" alt="Image">
+
+        <div class="col-md-9">
+            <p id="title">Sample Images</p>
+            <div class="row row-cols-1 row-cols-md-3">
+                {% for image in templateimages %}
+                <a href="{{ image.id }}" data-toggle="modal" data-target="#exampleModal{{image.id}}"
+                    data-target="#staticBackdrop">
+                    <div class="col mb-4">
+                        <div class="card">
+                            <img src="{{image.image.url}}" class="card-img-top" alt="Image">
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+            {% for image in templateimages %}
+            <!-- modal -->
+            <div class="modal fade" id="exampleModal{{image.id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-xl">
+                    <div class="modal-content" id="modal-body">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">{{image.name}}</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <img src="{{image.image.url}}" class="img-fluid" alt="Image">
+                                </div>
+                                <div class="col-md-3">
+                                    <h4 class="desc">Location</h4>
+                                    <p id="loc">{{image.location}}</p>
+                                    <h4 class="desc">Category</h4>
+                                    <p id="cat">{{image.category}}</p>
+                                    <h4 class="desc">Date Created</h4>
+                                    <p id="date">{{image.date_of_upload}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="text" id="imagelink" value="{{image.image.url}}"
+                                class="btn btn-outline-primary form-control imageUrl" readonly>
+                            <button type="button" class="btn btn-outline-primary fw-bold" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
             </div>
             {% endfor %}
         </div>
-
     </div>
 </div>
 {% endblock content%}
