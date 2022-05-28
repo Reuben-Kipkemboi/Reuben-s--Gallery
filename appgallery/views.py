@@ -31,7 +31,6 @@ def search(request):
         return render(request, 'search.html',{"message":message})
     
         
-def image_location(request,location):
-    location_images = Image.filter_by_location(location)
-    # locations=Location.objects.all()
-    return render(request, 'location.html', {'locations':location_images})
+def image_location(request):
+    location_images=Location.objects.all()
+    return render(request, 'location.html')
