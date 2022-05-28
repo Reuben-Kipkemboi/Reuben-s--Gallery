@@ -32,5 +32,6 @@
 }
 #trend mark:hover{
     outline:2px solid #d18a27;
-    font-size: 3vh;
+    background: #412728;
+    border-radius: 4px;
 }
