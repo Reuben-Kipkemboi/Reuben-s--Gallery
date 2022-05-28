@@ -20,4 +20,17 @@
 #trend{
     color: #F9F871;
     font-size: 3vh;
+    margin-top: 2%;
+}
+#trend mark{
+    
+    margin-left:1%;
+    background-color: transparent;
+    outline: 1px solid #F9F871;
+    color:#fff;
+
+}
+#trend mark:hover{
+    outline:2px solid #d18a27;
+    font-size: 3vh;
 }
