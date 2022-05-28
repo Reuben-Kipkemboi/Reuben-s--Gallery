@@ -10,10 +10,19 @@ class Location(models.Model):
     def __str__(self):
         self.location
         
+    def save_location(self):
+        self.save()
+        
         
 #class Category 
 class Category(models.Model):
     category =models.CharField(max_length=200)
+    
+    def __str__(self):
+        self.category
+        
+    def save_category(self):
+        self.save()
     
     
 
@@ -25,9 +34,14 @@ class Image(models.Model):
     location_id = models.ForeignKey(Location, on_delete=models.CASCADE)
     category_id = models.ForeignKey(Category, on_delete=models.CASCADE)
     
-    
+    def _str_(self):
+        self.name
+        
     class Meta:
         ordering=['date_of_upload']
+        
+    def save_image(self):
+        self.save()
     
     
     
