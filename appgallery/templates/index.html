@@ -11,9 +11,9 @@
                 <form class="" role="search" action="{% url 'search_results' %}">
                     <input class="form-control mr-sm-4" type="search" placeholder="Search for image with our categories"
                         aria-label="Search" name="search">
-                    <br>
-                    <div class="text-center">
-                        <button class="btn btn-lg shadow btn-outline-success my-2 my-sm-0 mx-auto" type="submit">Search
+                        <br>
+                    <div class="d-flex justify-content-end">
+                        <button class="btn shadow btn-outline-warning my-2 my-sm-0" type="submit">Search
                             Image</button>
                     </div>
                 </form>
@@ -33,7 +33,7 @@
     <div class="row">
         <div class="col-md-3">
             <ul class="list-group">
-                <li class="list-group-item active" aria-current="true">Locations</li>
+                <li class="list-group-item active bg-warning font-weight-bold" aria-current="true">Locations</li>
                 {% for location in locations%}
                 <a href="{% url 'location' location.id %}">
                     <li class="list-group-item text-center list-group-item-action">{{location.location}}</li>
@@ -74,21 +74,26 @@
                                     <img src="{{image.image.url}}" class="img-fluid" alt="Image">
                                 </div>
                                 <div class="col-md-3">
-                                    <h4 class="desc">Location</h4>
+                                    <h4 class="desc"><i class="fa-solid fa-location-pin"></i> Location</h4>
                                     <p id="loc">{{image.location}}</p>
-                                    <h4 class="desc">Image Category</h4>
+                                    <h4 class="desc"> <i class="fa-solid fa-share-nodes"></i> Image Category</h4>
                                     <p id="cat">{{image.category}}</p>
-                                    <h4 class="desc">Date Uploaded</h4>
+                                    <h4 class="desc"><i class="fa-solid fa-calendar-day"></i> Date Uploaded</h4>
                                     <p id="date">{{image.date_of_upload}}</p>
                                 </div>
                             </div>
                             <div class="row" id="center">
-                                <p class="text-white">{{image.description}}</p>
+                                <p class="text-white"><i class="fa-solid fa-info"></i> {{image.description}}</p>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <input type="text" id="imagelink" value="{{image.image.url}}"
-                                class="btn btn-outline-primary form-control imageUrl" readonly>
+
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" value="{{image.image.url}}" aria-describedby="basic-addon2"readonly>
+                                <div class="input-group-append">
+                                  <button class="btn btn-warning"  type="button">Copy Image Link</button>
+                                </div>
+                              </div>
                             <button type="button" class="btn btn-outline-primary fw-bold" data-dismiss="modal">Close</button>
                         </div>
                     </div>

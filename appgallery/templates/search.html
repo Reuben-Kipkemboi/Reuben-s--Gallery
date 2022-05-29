@@ -52,9 +52,13 @@
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <input type="text" id="imagelink" value="{{image.image.url}}"
-                                            class="btn btn-outline-primary form-control imageUrl" readonly>
-                                        <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" value="{{image.image.url}}" aria-describedby="basic-addon2"readonly>
+                                            <div class="input-group-append">
+                                              <button class="btn btn-warning"  type="button">Copy Image Link</button>
+                                            </div>
+                                          </div>
+                                        <button type="button" class="btn btn-outline-primary fw-bold" data-dismiss="modal">Close</button>
                                     </div>
                                 </div>
         
