@@ -82,3 +82,7 @@
     border: 1px solid #F9F871;
     border-radius:4px;
 }
+.desc-loc{
+    color: #000;
+    font-weight: bold;
+}
