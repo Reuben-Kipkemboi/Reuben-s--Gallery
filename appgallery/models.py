@@ -2,6 +2,7 @@
 from email.policy import default
 from django.db import models
 from django.http import Http404
+from cloudinary.models import CloudinaryField
 # application models
 
 #location
@@ -50,7 +51,8 @@ class Category(models.Model):
    
 
 class Image(models.Model):
-    image= models.ImageField(upload_to='photos/', default ="photos/p.png")
+    image=CloudinaryField('image')
+    # image= models.ImageField(upload_to='photos/', default ="photos/p.png")
     name =models.CharField(max_length=100)
     description =models.TextField()
     date_of_upload = models.DateTimeField(auto_now_add=True)

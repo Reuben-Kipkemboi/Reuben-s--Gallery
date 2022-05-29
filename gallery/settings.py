@@ -15,6 +15,17 @@ import dj_database_url
 from decouple import config,Csv
 from pathlib import Path
 
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+
+# adding config
+cloudinary.config( 
+  cloud_name = "reuby", 
+  api_key = "127562842443717", 
+  api_secret = "zxr3TbjmRS2ZvPW9XT-sApQDEtA" 
+)
 
 MODE=config("MODE", default="dev")
 SECRET_KEY = config('SECRET_KEY')
@@ -72,6 +83,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary'
 ]
 
 MIDDLEWARE = [
