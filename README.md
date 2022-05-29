@@ -33,9 +33,15 @@ Home module
 
 ![Home]()
 
-Search Module
+## Behaviour Driven Development
+| Behaviour | Input | Output |
+| :---------------- | :---------------: | ------------------: |
+| Application starts | **On page load** | see a search bar and some sample images |
+| Search| **image category** | Redirects to search results page and if image exists the images shown else otherwise |
+| Image click | **Image click** | Modal appears with the image details and description|
+| click on copy image link | **Button click** | Copies image link that can be shared with others|
+| Close button | **button click** | Closes modal and redirects to home page|
 
-![Search]()
 
 ## Installation Requirements
 
