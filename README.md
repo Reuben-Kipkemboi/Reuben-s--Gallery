@@ -31,7 +31,11 @@ User Can :-
 
 Home module
 
-![Home]()
+![Home](./appgallery/static/images/picha-home.png)
+
+Search module with search term
+
+![Home](./appgallery/static/images/picha.png)
 
 ## Behaviour Driven Development
 | Behaviour | Input | Output |
