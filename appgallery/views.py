@@ -16,7 +16,7 @@ def search(request):
     if 'search' in request.GET and request.GET["search"]:
         term_of_search = request.GET.get("search")
         searched_images = Image.search_image(term_of_search)
-        print("___________________________________________")
+        print("*--*--*--*--*--*--*--*--*--*--*--*--*")
         print(searched_images)
         message = f"{term_of_search}"
 

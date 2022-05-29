@@ -1,6 +1,7 @@
 
 from email.policy import default
 from django.db import models
+from django.http import Http404
 # application models
 
 #location
@@ -9,6 +10,16 @@ class Location(models.Model):
         
     def save_location(self):
         self.save()
+        
+    @classmethod
+    def update_location(cls, id,updatedlocation):
+        cls.objects.filter(id=id).update(image=updatedlocation)
+        
+        
+    @classmethod
+    def delete_location(cls, id):
+        cls.objects.filter(id=id).delete()
+    
     
     def __str__(self):
         return self.location
@@ -18,14 +29,25 @@ class Location(models.Model):
 class Category(models.Model):
     category =models.CharField(max_length=200)
     
-        
+    def __str__(self):
+        return self.category 
+    
     def save_category(self):
         self.save()
         
-    def __str__(self):
-        return self.category
+    # def delete_category(self):
+    #     self.category.delete()
     
+    @classmethod
+    def update_category(cls, id,updatedcategory):
+        cls.objects.filter(id=id).update(image=updatedcategory)
     
+        
+    @classmethod
+    def delete_category(cls, id):
+        cls.objects.filter(id=id).delete()
+        
+   
 
 class Image(models.Model):
     image= models.ImageField(upload_to='photos/', default ="photos/p.png")
@@ -70,11 +92,22 @@ class Image(models.Model):
         images = cls.objects.filter(name__icontains=search_term)
         return images
     
+    
     @classmethod
     def search_image(cls, category):
         images = cls.objects.filter(category_id__category__icontains=category)
         return images
     
+    
+    @classmethod
+    def get_images_by_id(cls, id):
+        try:
+            image = cls.objects.get(id=id)
+            return image
+        except Image.DoesNotExist:
+            # print('Image does not exist')
+            raise Http404()
+            
     @classmethod
     def filter_by_location(cls, location_id):
         location_filter_results = Image.objects.filter(location__id =location_id)
