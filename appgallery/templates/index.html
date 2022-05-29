@@ -11,7 +11,7 @@
                 <form class="" role="search" action="{% url 'search_results' %}">
                     <input class="form-control mr-sm-4" type="search" placeholder="Search for image with our categories"
                         aria-label="Search" name="search">
-                        <br>
+                    <br>
                     <div class="d-flex justify-content-end">
                         <button class="btn shadow btn-outline-warning my-2 my-sm-0" type="submit">Search
                             Image</button>
@@ -89,12 +89,17 @@
                         <div class="modal-footer">
 
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" value="{{image.image.url}}" aria-describedby="basic-addon2"readonly>
+                                <input type="text" class="form-control" value="{{image.image.url}}"
+                                    aria-describedby="basic-addon2" readonly id="input">
                                 <div class="input-group-append">
-                                  <button class="btn btn-warning"  type="button">Copy Image Link</button>
+                                    <button class="btn btn-warning" type="button" value="{{image.image.url}}" id="copy"
+                                        onclick="copyFunction()"><i class="fa-solid fa-copy"></i> Copy Image
+                                        Link</button>
                                 </div>
-                              </div>
-                            <button type="button" class="btn btn-outline-primary fw-bold" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-outline-primary fw-bold"
+                                    data-dismiss="modal">Close</button>
+                            </div>
+
                         </div>
                     </div>
 

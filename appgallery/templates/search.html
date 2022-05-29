@@ -4,9 +4,9 @@
     <p class="search-title">Search Results</p>
     <div class="row">
         {% if images%}
-            <h2 class="search-title">Found {{ images|length }} images related with term: {{message}}</h2>
+            <h2 class="search-title">Found {{ images|length }} images related in this category: {{message}}</h2>
             {% else %}
-            <h2 class="search-title"> Found 0 images for the search term {{message}}</h2>
+            <h2 class="search-title"> Found 0 images in this category{{message}}</h2>
             {% endif %}
             <div class="row d-flex justify-content-around">
                 <div class="col-md-12">
@@ -53,9 +53,9 @@
                                     </div>
                                     <div class="modal-footer">
                                         <div class="input-group mb-3">
-                                            <input type="text" class="form-control" value="{{image.image.url}}" aria-describedby="basic-addon2"readonly>
+                                            <input type="text" class="form-control" value="{{image.image.url}}" aria-describedby="basic-addon2"readonly id="input">
                                             <div class="input-group-append">
-                                              <button class="btn btn-warning"  type="button">Copy Image Link</button>
+                                              <button class="btn btn-warning"  type="button" value="{{image.image.url}}" id="copy" onclick="copyFunction()"><i class="fa-solid fa-copy"></i> Copy Image Link</button>
                                             </div>
                                           </div>
                                         <button type="button" class="btn btn-outline-primary fw-bold" data-dismiss="modal">Close</button>
