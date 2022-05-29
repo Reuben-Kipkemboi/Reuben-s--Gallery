@@ -62,10 +62,11 @@
     font-size: 4vh;
     font-weight: bolder;
 }
-#date, #cat, #loc{
+#date, #cat, #loc,.desc-mod{
     color: #d18a27;
     font-size: 3vh;
     font-weight: bold;
+    border-bottom: 1px solid #fff;
 }
 .desc{
     border-bottom: 1px solid #fff;
@@ -92,4 +93,11 @@
     color: #412728;
 
 
+}
+#mod-body, #footer{
+    background-color: #000;
+}
+
+.text-mod{
+    color: #fff;
 }
