@@ -55,11 +55,10 @@ Search module with search term
 - Pip & Python
 - Pillow 
 - Postgres Database
-- 
 
 ## Instructions
 
-To get the project .......  
+To use this gallery project .......  
   
 ##### Clone Repository:  
  ```bash 
