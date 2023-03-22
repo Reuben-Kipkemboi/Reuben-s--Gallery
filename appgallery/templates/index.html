@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="col-md-12">
                 <p id="paragraph1">
-                    what is a gallery to you? Have a look...
+                    What is a Gallery to you? Have a look...
                 </p>
                 <form class="" role="search" action="{% url 'search_results' %}">
                     <input class="form-control mr-sm-4" type="search" placeholder="Search for image with our categories"
@@ -35,7 +35,7 @@
     <div class="row pt-2">
         <div class="col-md-3 pt-2">
             <ul class="list-group">
-                <li class="list-group-item active bg-warning font-weight-bold" aria-current="true">Locations</li>
+                <li class="list-group-item active font-weight-bold" aria-current="true" id="active">Locations</li>
                 {% for location in locations%}
                 <a href="{% url 'location' location.id %}">
                     <li class="list-group-item text-center list-group-item-action">{{location.location}}</li>
