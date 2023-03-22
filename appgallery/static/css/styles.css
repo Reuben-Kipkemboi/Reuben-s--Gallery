@@ -16,34 +16,33 @@
 
 }
 #paragraph1{
-    color: #fff;
+    /* color: #fff; */
+    color: #ce8e01;
     font-size: 7vh;
     font-weight: bold;
     text-align: center;
 }
 
 #paragraph1:hover{
-    color:#F9F871;
+    color:#ffffff;
 }
 .centred-text{
     text-align: center;
+    border-bottom: 1px solid #ffffff;
 
+}
+#trend{
+    color:#ce8e01;
+    font-size: 3vh;
+    margin-top: 2%;
+    text-align: center;
+    
 }
 .trends-trends{
     font-size: 3vh;
-}
-#trend{
-    color: #F9F871;
-    font-size: 3vh;
-    margin-top: 2%;
-    
-}
-#trend mark{
-    
     margin-left:1%;
     background-color: transparent;
-    outline: 1px solid #F9F871;
-    color:#fff;
+    
 
 }
 #trend mark:hover{
