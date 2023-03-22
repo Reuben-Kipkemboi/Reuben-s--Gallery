@@ -25,6 +25,13 @@
 #paragraph1:hover{
     color:#F9F871;
 }
+.centred-text{
+    text-align: center;
+
+}
+.trends-trends{
+    font-size: 3vh;
+}
 #trend{
     color: #F9F871;
     font-size: 3vh;
