@@ -32,19 +32,19 @@
             </div>
         </div>
     </div>
-    <div class="row pt-2">
-        <div class="col-md-3 pt-2">
-            <ul class="list-group">
-                <li class="list-group-item active font-weight-bold" aria-current="true" id="active">Locations</li>
-                {% for location in locations%}
-                <a href="{% url 'location' location.id %}">
-                    <li class="list-group-item text-center list-group-item-action">{{location.location}}</li>
-                </a>
-                {% endfor %}
-            </ul>
-        </div>
 
-        <div class="col-md-9">
+    <div class="row pt-2" id="locations-images">
+        <h3 class=""> From Our Destined locations</h3>
+
+        {% for location in locations %}
+        <a href="{% url 'location' location.id %}" id="link">{{ location.location }}</a>
+        {% endfor %}
+
+
+    </div>
+
+    <div class="row pt-2">
+        <div class="col-md-12">
             <p id="title">Sample Images</p>
             <div class="row row-cols-1 row-cols-md-3">
                 {% for image in templateimages %}
@@ -70,7 +70,7 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div class="modal-body"id="modal-body">
+                        <div class="modal-body" id="modal-body">
                             <div class="row">
                                 <div class="col-md-9">
                                     <img src="{{image.image.url}}" class="img-fluid" alt="Image">
@@ -100,7 +100,7 @@
                                 </div>
                             </div>
                             <button type="button" class="btn btn-outline-primary fw-bold"
-                                    data-dismiss="modal">Close</button>
+                                data-dismiss="modal">Close</button>
 
                         </div>
                     </div>

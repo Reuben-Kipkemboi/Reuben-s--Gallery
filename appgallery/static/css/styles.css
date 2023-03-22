@@ -1,27 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
 
 *{
-    /* font-family: 'Delius Swash Caps', cursive; */
-    /* font-family: 'Inter', sans-serif; */
-    /* font-family: 'Handlee', cursive; */
     font-family: 'Chakra Petch', sans-serif; 
-    
 }
 #home{
     background: #000;
-
+}
+#locations-images{
+    display: block;
+    margin: auto;
+    color:#ce8e01;
+    text-align:center;
+    font-weight:900;
+    font-size: 3vh;
 }
 #paragraph1{
-    /* color: #fff; */
     color: #ce8e01;
     font-size: 7vh;
     font-weight: bold;
     text-align: center;
 }
+
 
 #paragraph1:hover{
     color:#ffffff;
@@ -29,8 +28,8 @@
 .centred-text{
     text-align: center;
     border-bottom: 1px solid #ffffff;
-
 }
+
 #trend{
     color:#ce8e01;
     font-size: 3vh;
@@ -43,12 +42,6 @@
     margin-left:1%;
     background-color: transparent;
     
-
-}
-#trend mark:hover{
-    outline:2px solid #d18a27;
-    background: #412728;
-    border-radius: 4px;
 }
 #home-search{
     background-color: #000;
@@ -74,8 +67,13 @@
 }
 #exampleModalLabel{
     color: #d18a27;
-    font-size: 4vh;
-    font-weight: bolder;
+    font-size: 3vh;
+    font-weight: 700;
+}
+#link{
+    text-decoration: none;
+    color: #ce8e01;
+    font-weight: 400;
 }
 #date, #cat, #loc,.desc-mod{
     color: #d18a27;
@@ -110,6 +108,11 @@
 }
 #btn{
     outline: 1px solid #ce8e01;
+}
+.card-img-top{
+    width: 100%;
+    height: 40vh;
+    object-fit: cover;
 }
 #picha{
     font-weight: bolder;
