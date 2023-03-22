@@ -108,11 +108,13 @@
     font-size: 2.5vh;
     text-align: right;
 }
+#btn{
+    outline: 1px solid #ce8e01;
+}
 #picha{
-    font-style: italic;
     font-weight: bolder;
-    color: #412728;
-
+    color: #ce8e01;
+    font-size: 2.2vh;
 }
 #mod-body, #footer{
     background-color: #000;
