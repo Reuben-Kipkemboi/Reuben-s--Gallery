@@ -2,10 +2,14 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
+
 *{
     /* font-family: 'Delius Swash Caps', cursive; */
     /* font-family: 'Inter', sans-serif; */
-    font-family: 'Handlee', cursive;
+    /* font-family: 'Handlee', cursive; */
+    font-family: 'Chakra Petch', sans-serif; 
+    
 }
 #home{
     background: #000;
@@ -25,6 +29,7 @@
     color: #F9F871;
     font-size: 3vh;
     margin-top: 2%;
+    
 }
 #trend mark{
     
