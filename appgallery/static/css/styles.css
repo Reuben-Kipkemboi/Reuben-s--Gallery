@@ -74,6 +74,8 @@
     text-decoration: none;
     color: #ce8e01;
     font-weight: 400;
+    border-bottom: 0.2px solid #ffffff;
+    margin-left: 1%;
 }
 #date, #cat, #loc,.desc-mod{
     color: #d18a27;
