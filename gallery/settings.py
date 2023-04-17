@@ -118,21 +118,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'gallery.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME':'dbgallery',
-#         'USER':'moringa',
-#         'PASSWORD':'Access',
-#         'HOST':''
-#     }
-# }
-
-
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
@@ -192,3 +177,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Configure Django App for Heroku.
 django_heroku.settings(locals())
+
+# csrf origins
+CSRF_TRUSTED_ORIGINS = ["https://pichagalley.up.railway.app"]
