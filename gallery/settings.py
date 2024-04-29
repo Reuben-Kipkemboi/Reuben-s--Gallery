@@ -21,11 +21,13 @@ import cloudinary.api
 
 
 # adding config
-cloudinary.config( 
-  cloud_name = "reuby", 
-  api_key = "127562842443717", 
-  api_secret = "zxr3TbjmRS2ZvPW9XT-sApQDEtA" 
-)
+cloudinary.config(
+    cloud_name = config('CLOUDINARY_CLOUD_NAME'),
+    api_key = config('CLOUDINARY_API_KEY'),
+    api_secret = config('CLOUDINARY_API_SECRET')
+
+);
+
 
 MODE=config("MODE", default="dev")
 SECRET_KEY = config('SECRET_KEY')
@@ -64,10 +66,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-
-
-
-
 
 ALLOWED_HOSTS = []
 
